@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block body %}
+<style>
+    body {
+        background: #f3f4f6;
+        padding-top: 0px; /* Enough space for fixed navbar */
+    }
+
+    .form-wrapper {
+        min-height: calc(100vh - 80px); /* Full height minus navbar */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-form {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        animation: slideIn 0.8s ease;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .contact-form h2 {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .form-control {
+        border-radius: 8px;
+    }
+
+    button {
+        width: 100%;
+        border-radius: 8px;
+        padding: 10px;
+    }
+</style>
+
+<div class="form-wrapper">
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form method="post" action="/contact">
+            {% csrf_token %}
+            <div class="form-group mb-3">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" name="name" id="name" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="phone">Phone Number:</label>
+                <input type="text" class="form-control" name="phone_number" id="phone_number" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="email">Email Address:</label>
+                <input type="email" class="form-control" name="email" id="email" required>
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="message">Your Message:</label>
+                <textarea class="form-control" name="massage" id="massage" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </div>
+</div>
+{% endblock body %}

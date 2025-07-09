@@ -1,0 +1,49 @@
+<!-- manager/orders_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Orders - Manager View</title>
+    <style>
+        body { font-family: Arial; background: #f7f7f7; padding: 20px; }
+        h1 { color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
+        th { background: #333; color: white; }
+        tr:nth-child(even) { background: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>All Submitted Orders (Manager)</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Table</th>
+                <th>Phone</th>
+                <th>Items</th>
+                <th>Total (₹)</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.name }}</td>
+                <td>{{ order.table_no }}</td>
+                <td>{{ order.phone }}</td>
+                <td>{{ order.items }}</td>
+                <td>{{ order.total_price }}</td>
+                <td>{{ order.created_at|date:"d M Y H:i" }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="7">No orders submitted yet.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

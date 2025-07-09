@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block body %}
+<style>
+    .about-section {
+        background: #fff9f5;
+        padding: 60px 30px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        line-height: 1.8;
+    }
+
+    .about-section h1 {
+        text-align: center;
+        font-size: 42px;
+        font-weight: bold;
+        color: #d35400;
+        margin-bottom: 30px;
+    }
+
+    .about-section p {
+        font-size: 18px;
+        text-align: justify;
+        max-width: 1000px;
+        margin: 0 auto 25px auto;
+    }
+
+    .about-section strong {
+        color: #c0392b;
+    }
+
+    @media (max-width: 768px) {
+        .about-section {
+            padding: 40px 15px;
+        }
+
+        .about-section h1 {
+            font-size: 32px;
+        }
+
+        .about-section p {
+            font-size: 16px;
+        }
+    }
+</style>
+
+<div class="about-section">
+    <h1>About Us</h1>
+    <p>
+        Welcome to <strong>kaka da Dhaba</strong>, your go-to destination for exceptional dining experiences. 
+        Since our doors first opened, we have dedicated ourselves to serving delicious meals crafted with passion, tradition, 
+        and a modern touch. Located in the heart of the city, our restaurant blends a cozy atmosphere with world-class service, 
+        making it the perfect place for family gatherings, romantic dinners, business lunches, and everything in between.
+    </p>
+    <p>
+        Our chefs bring years of experience and a love for cooking to every dish we prepare. We source only the freshest ingredients, 
+        working closely with local farmers and suppliers to ensure quality and sustainability. From the aroma of spices in our signature 
+        dishes to the elegant presentation on your plate, every meal at <strong>kaka da Dhaba</strong> is a feast for the senses.
+    </p>
+    <p>
+        But we’re more than just great food. At the heart of our restaurant is a commitment to our guests. We strive to create a welcoming 
+        and memorable experience for everyone who walks through our doors. Whether it’s your first visit or your hundredth, you’ll always be 
+        treated like family. Our staff is here to make sure your experience is smooth, satisfying, and filled with joy.
+    </p>
+    <p>
+        We invite you to relax, unwind, and enjoy the unique flavors that define our menu. From traditional favorites to innovative 
+        new creations, there’s something for every palate. We also offer customized services for events, parties, and private dining, 
+        making your special moments even more memorable.
+    </p>
+    <p>
+        Thank you for choosing <strong>kaka da Dhaba</strong>. We look forward to serving you and becoming your favorite spot 
+        for food, fun, and unforgettable memories.
+    </p>
+</div>
+{% endblock %}
